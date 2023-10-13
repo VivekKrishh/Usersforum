@@ -28,7 +28,6 @@
 		E358212E2AD871E600496353 /* UserTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E358212C2AD871E600496353 /* UserTableCell.xib */; };
 		E35821302AD9016200496353 /* TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E358212F2AD9016200496353 /* TableViewExtensions.swift */; };
 		E35821322AD9040C00496353 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35821312AD9040C00496353 /* ArrayExtensions.swift */; };
-		E35821362AD9259800496353 /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35821352AD9259800496353 /* RootNavigationController.swift */; };
 		E358213C2AD92D8600496353 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E358213B2AD92D8600496353 /* UserDetailView.swift */; };
 		E358213E2AD92D9D00496353 /* UserDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E358213D2AD92D9D00496353 /* UserDetailPresenter.swift */; };
 		E35821402AD92DB400496353 /* UserDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E358213F2AD92DB400496353 /* UserDetailInteractor.swift */; };
@@ -86,7 +85,6 @@
 		E358212C2AD871E600496353 /* UserTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableCell.xib; sourceTree = "<group>"; };
 		E358212F2AD9016200496353 /* TableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtensions.swift; sourceTree = "<group>"; };
 		E35821312AD9040C00496353 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
-		E35821352AD9259800496353 /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		E358213B2AD92D8600496353 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		E358213D2AD92D9D00496353 /* UserDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailPresenter.swift; sourceTree = "<group>"; };
 		E358213F2AD92DB400496353 /* UserDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailInteractor.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 		E35821142AD7F80500496353 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				E35821352AD9259800496353 /* RootNavigationController.swift */,
 				E35821382AD92D4D00496353 /* UserDetail */,
 				E35821372AD92D3000496353 /* UsersList */,
 			);
@@ -523,7 +520,6 @@
 				E358211A2AD7F8EE00496353 /* Interactor.swift in Sources */,
 				E35821162AD7F86600496353 /* View.swift in Sources */,
 				E358211C2AD7F8F800496353 /* Router.swift in Sources */,
-				E35821362AD9259800496353 /* RootNavigationController.swift in Sources */,
 				E358211E2AD7F90300496353 /* Entity.swift in Sources */,
 				E358212D2AD871E600496353 /* UserTableCell.swift in Sources */,
 				E35820E52AD7F7F100496353 /* AppDelegate.swift in Sources */,

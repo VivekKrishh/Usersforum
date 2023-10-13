@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="1946" y="4"/>
         </scene>
-        <!--Root Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="u9X-Td-haK">
             <objects>
-                <navigationController storyboardIdentifier="RootNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="DB1-sa-pel" customClass="RootNavigationController" customModule="USERSFORUM" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DB1-sa-pel" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qa4-js-mC6">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
