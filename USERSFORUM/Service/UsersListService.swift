@@ -2,7 +2,7 @@
 //  UsersListService.swift
 //  USERSFORUM
 //
-//  Created by Pearlarc on 15/10/23.
+//  Created by Vivek on 15/10/23.
 //
 
 import Foundation
@@ -13,7 +13,7 @@ protocol UsersListServiceProtocol {
     
 }
 
-final class UsersListService : UsersListServiceProtocol {
+final class UsersListService: UsersListServiceProtocol {
     
     func getUsersInfoFromAPI(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void) {
                 
@@ -30,4 +30,3 @@ final class UsersListService : UsersListServiceProtocol {
     }
   
 }
-

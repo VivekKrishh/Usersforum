@@ -43,6 +43,8 @@
 		E358215B2ADBFC8A00496353 /* APIEndPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E358215A2ADBFC8A00496353 /* APIEndPointTests.swift */; };
 		E3B739302ADD86350036629B /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7392F2ADD86350036629B /* StoryboardIdentifier.swift */; };
 		E3B739322ADD88AC0036629B /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B739312ADD88AC0036629B /* UIStoryboardExtension.swift */; };
+		E3B739342ADDA3BC0036629B /* UsersListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B739332ADDA3BC0036629B /* UsersListServiceTests.swift */; };
+		E3B739362ADDBAE60036629B /* MockUsersListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B739352ADDBAE60036629B /* MockUsersListService.swift */; };
 		F13D2828879155634FA6C9E8 /* Pods_USERSFORUMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0210710933E0BAA0A1E40C4 /* Pods_USERSFORUMTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +113,8 @@
 		E358215A2ADBFC8A00496353 /* APIEndPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPointTests.swift; sourceTree = "<group>"; };
 		E3B7392F2ADD86350036629B /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
 		E3B739312ADD88AC0036629B /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		E3B739332ADDA3BC0036629B /* UsersListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListServiceTests.swift; sourceTree = "<group>"; };
+		E3B739352ADDBAE60036629B /* MockUsersListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersListService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 			children = (
 				E35821552ADBF6C100496353 /* APIClient */,
 				E35820FB2AD7F7F300496353 /* USERSFORUMTests.swift */,
+				E3B739332ADDA3BC0036629B /* UsersListServiceTests.swift */,
 			);
 			path = USERSFORUMTests;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				E35821492ADBB0BE00496353 /* UsersListService.swift */,
+				E3B739352ADDBAE60036629B /* MockUsersListService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				E358213C2AD92D8600496353 /* UserDetailView.swift in Sources */,
 				E358213E2AD92D9D00496353 /* UserDetailPresenter.swift in Sources */,
 				E35821402AD92DB400496353 /* UserDetailInteractor.swift in Sources */,
+				E3B739362ADDBAE60036629B /* MockUsersListService.swift in Sources */,
 				E35821302AD9016200496353 /* TableViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +637,7 @@
 				E35821592ADBFA9700496353 /* NetworkManagerTests.swift in Sources */,
 				E35820FC2AD7F7F300496353 /* USERSFORUMTests.swift in Sources */,
 				E35821572ADBF71700496353 /* ResponseErrorTests.swift in Sources */,
+				E3B739342ADDA3BC0036629B /* UsersListServiceTests.swift in Sources */,
 				E358215B2ADBFC8A00496353 /* APIEndPointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
