@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  USERSFORUM
+
+  Created by Vivek on 15/10/23.
+  
+*/
+
+// Error Messages
+"errorRemoteDataParsingFailed" = "Users data not found.";
+"errorInvalidEndPoint" = "Endpoint is not valid.";
+"errorUnknown" = "Unknown error occured.\nPlease try again.";

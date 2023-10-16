@@ -11,7 +11,7 @@
         <!--Users-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="View" id="BYZ-38-t0r" customClass="View" customModule="USERSFORUM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="View" id="BYZ-38-t0r" customClass="UserListView" customModule="USERSFORUM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
         <!--User Detail View-->
         <scene sceneID="GAX-5J-H0u">
             <objects>
-                <viewController storyboardIdentifier="UserDetailView" id="BgD-eF-bBp" customClass="UserDetailView" customModule="USERSFORUM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserDetail" id="BgD-eF-bBp" customClass="UserDetailView" customModule="USERSFORUM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0u9-cr-qgG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

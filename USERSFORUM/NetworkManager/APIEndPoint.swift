@@ -14,7 +14,7 @@ enum APIEndPoint {
     var path: String {
         switch self {
         case .FetchUsers:
-            return Constants.API.users
+            return APIConstants.users
         }
     }
     

@@ -8,12 +8,6 @@
 import Foundation
 import Alamofire
 
-enum NetworkError: Error {
-    case invalidURL
-    case responseError(description: String)
-    case decodingFailed
-}
-
 protocol NetworkProtocol {
     
     func getRequest<T:Codable>(url: URL?, expecting: T.Type, onCompletion:@escaping (Result<T,Error>)-> Void)
@@ -30,7 +24,7 @@ class NetworkManager: NetworkProtocol {
     
     func getRequest<T:Codable>(url: URL?, expecting: T.Type, onCompletion:@escaping (Result<T,Error>)-> Void) {
         guard let url = url else {
-            onCompletion(.failure(NetworkError.invalidURL))
+            onCompletion(.failure(ResponseError.invalidURL))
             return
         }
         
@@ -44,10 +38,10 @@ class NetworkManager: NetworkProtocol {
                         onCompletion(.success(result))
                     } catch {
                         print("Failed to parse Json")
-                        onCompletion(.failure(NetworkError.decodingFailed))
+                        onCompletion(.failure(ResponseError.decoding))
                     }
-                case .failure(let error):
-                    onCompletion(.failure(NetworkError.responseError(description: error.localizedDescription)))
+                case .failure(_):
+                    onCompletion(.failure(ResponseError.unexpectedStatusCode))
                 }
             }
         

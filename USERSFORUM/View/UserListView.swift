@@ -9,22 +9,22 @@ import UIKit
 
 protocol UsersViewProtocol {
     
-    var presenter: Presenter? { get set }
+    var presenter: UserListPresenter? { get set }
     
-    var router: Router? { get set }
+    var router: UserListRouter? { get set }
     
-    func updateUI(with usersData: [UserInfo]?, error: NetworkError?)
+    func updateUI(with usersData: [UserInfo]?, error: ResponseError?)
     
 }
 
-class View: UIViewController, UsersViewProtocol {
+class UserListView: UIViewController, UsersViewProtocol {
     
     // Outlets
     @IBOutlet weak var usersTable: UITableView!
     
-    var presenter: Presenter?
+    var presenter: UserListPresenter?
     
-    var router: Router?
+    var router: UserListRouter?
     
     private var users: [UserInfo] = []
 
@@ -42,14 +42,14 @@ class View: UIViewController, UsersViewProtocol {
     }
     
     func registerNibs() {
-        usersTable.register(UINib(nibName: UserTableCell.name, bundle: nil), forCellReuseIdentifier: UserTableCell.name)
+        usersTable.register(UINib(nibName: UserListTableCell.name, bundle: nil), forCellReuseIdentifier: UserListTableCell.name)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //Initialize Router setup which will intialize all the objects of VIPER
-        Router.initialSetup(with: self)
+        UserListRouter.initialSetup(with: self)
         
         self.view.addSubview(placeholderLabel)
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -69,32 +69,32 @@ class View: UIViewController, UsersViewProtocol {
     }
     
 
-    func updateUI(with usersData: [UserInfo]?, error: NetworkError?) {
+    func updateUI(with usersData: [UserInfo]?, error: ResponseError?) {
         DispatchQueue.main.async { [weak self] in
             if let usersData = usersData {
                 self?.users = usersData
                 self?.usersTable.reloadData()
             } else {
-                self?.placeholderLabel.text = Constants.StringConstants.ErrorMessage.somethingWentWrong
+                self?.placeholderLabel.text = UsersForumApp.errorUnknown.localized
             }
         }
     }
 
 }
 
-extension View {
+extension UserListView {
     static var name: String {
        return String(describing: self)
     }
 }
 
-extension View: UITableViewDataSource, UITableViewDelegate {
+extension UserListView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: UserTableCell.self, for: indexPath)
+        let cell = tableView.dequeueReusableCell(for: UserListTableCell.self, for: indexPath)
         
         let user = users.item(at: indexPath.row)
         cell.labelName.text = user?.name ?? ""
