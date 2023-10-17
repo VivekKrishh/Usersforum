@@ -9,11 +9,11 @@ import Foundation
 
 enum APIEndPoint {
     
-    case FetchUsers
+    case fetchUsers
     
     var path: String {
         switch self {
-        case .FetchUsers:
+        case .fetchUsers:
             return APIConstants.users
         }
     }

@@ -39,9 +39,9 @@ class UserListRouter: UserListRouterProtocol {
     static func initialSetup(with rootController: UserListView) {
         
         let router = UserListRouter()
-        ///Set Entry Point to define root controller
+        /// Set Entry Point to define root controller
         router.entry = rootController
-        ///Initialize all the View Presenter Interactor Router Objects
+        /// Initialize all the View Presenter Interactor Router Objects
         var view: UsersViewProtocol = rootController
         
         var presenter: UserListPresenterProtocol = UserListPresenter()
@@ -60,9 +60,7 @@ class UserListRouter: UserListRouterProtocol {
     }
     
     func navigateToDetail(with userData: UserInfo) {
-//        let detailVc = UIStoryboard(name: StoryboardIdentifier.UserDetail.storyboardName, bundle: nil).instantiateViewController(withIdentifier: UserDetailView.name)
-        let detailVc: UserDetailView = UIStoryboard.instantiate(identifier: .UserDetail)
-        
+        let detailVc: UserDetailView = UIStoryboard.instantiate(identifier: .userDetail)
         self.view?.navigationController?.pushViewController(detailVc, animated: true)
     }
 }

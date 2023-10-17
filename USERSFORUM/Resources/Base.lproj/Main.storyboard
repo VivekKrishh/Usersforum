@@ -41,7 +41,7 @@
         <!--User Detail View-->
         <scene sceneID="GAX-5J-H0u">
             <objects>
-                <viewController storyboardIdentifier="UserDetail" id="BgD-eF-bBp" customClass="UserDetailView" customModule="USERSFORUM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userDetail" id="BgD-eF-bBp" customClass="UserDetailView" customModule="USERSFORUM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0u9-cr-qgG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

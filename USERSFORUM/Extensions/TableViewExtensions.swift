@@ -14,7 +14,8 @@ extension UITableView {
     }
 
     public func register<T: UITableViewCell>(cell: T.Type) {
-        register(T.self, forCellReuseIdentifier: reuseIndentifier(for: cell))
+        let nib = UINib(nibName: reuseIndentifier(for: cell), bundle: nil)
+        register(nib, forCellReuseIdentifier: reuseIndentifier(for: cell))
     }
 
     public func register<T: UITableViewHeaderFooterView>(headerFooterView: T.Type) {

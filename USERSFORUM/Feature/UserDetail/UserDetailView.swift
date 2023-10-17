@@ -17,11 +17,6 @@ protocol UserDetailViewProtocol {
 }
 
 class  UserDetailView: UIViewController, UserDetailViewProtocol {
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     static var name: String {
         return String(describing: self)

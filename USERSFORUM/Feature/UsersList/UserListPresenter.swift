@@ -15,7 +15,7 @@ protocol UserListPresenterProtocol {
     
     var interactor: UserListInteractor? { get set }
     
-    //Tell interactor to call the API to update the View
+    // Tell interactor to call the API to update the View
     func updateView()
     
 }

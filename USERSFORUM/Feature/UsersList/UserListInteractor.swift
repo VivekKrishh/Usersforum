@@ -36,7 +36,5 @@ class UserListInteractor: UserListInteractorProtocol {
                 onCompletion(nil, error)
             }
         }
-    }
-    
+    }    
 }
-

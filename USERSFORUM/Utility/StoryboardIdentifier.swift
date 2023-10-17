@@ -13,13 +13,13 @@ enum Storyboard: String {
 
 enum StoryboardIdentifier: String {
     
-    case UsersList
+    case usersList
     
-    case UserDetail
+    case userDetail
     
     var storyboardName: String {
         switch self {
-        case .UsersList, .UserDetail:
+        case .usersList, .userDetail:
             return Storyboard.main.rawValue
         }
     }

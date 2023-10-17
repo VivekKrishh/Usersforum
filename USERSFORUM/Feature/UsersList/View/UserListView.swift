@@ -42,13 +42,13 @@ class UserListView: UIViewController, UsersViewProtocol {
     }
     
     func registerNibs() {
-        usersTable.register(UINib(nibName: UserListTableCell.name, bundle: nil), forCellReuseIdentifier: UserListTableCell.name)
+        usersTable.register(cell: UserListTableCell.self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //Initialize Router setup which will intialize all the objects of VIPER
+        // Initialize Router setup which will intialize all the objects of VIPER
         UserListRouter.initialSetup(with: self)
         
         self.view.addSubview(placeholderLabel)

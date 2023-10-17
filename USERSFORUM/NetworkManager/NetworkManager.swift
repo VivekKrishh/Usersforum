@@ -10,7 +10,7 @@ import Alamofire
 
 protocol NetworkProtocol {
     
-    func getRequest<T:Codable>(url: URL?, expecting: T.Type, onCompletion:@escaping (Result<T,Error>)-> Void)
+    func getRequest<T:Codable>(url: URL?, expecting: T.Type, onCompletion: @escaping (Result<T,Error>) -> Void )
     
 }
 
@@ -22,7 +22,7 @@ class NetworkManager: NetworkProtocol {
         print("Network Manager Initialized")
     }
     
-    func getRequest<T:Codable>(url: URL?, expecting: T.Type, onCompletion:@escaping (Result<T,Error>)-> Void) {
+    func getRequest<T:Codable>(url: URL?, expecting: T.Type, onCompletion: @escaping (Result<T,Error>) -> Void ) {
         guard let url = url else {
             onCompletion(.failure(ResponseError.invalidURL))
             return
@@ -40,7 +40,7 @@ class NetworkManager: NetworkProtocol {
                         print("Failed to parse Json")
                         onCompletion(.failure(ResponseError.decoding))
                     }
-                case .failure(_):
+                case .failure:
                     onCompletion(.failure(ResponseError.unexpectedStatusCode))
                 }
             }

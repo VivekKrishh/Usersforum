@@ -17,7 +17,7 @@ final class UsersListService: UsersListServiceProtocol {
     
     func getUsersInfoFromAPI(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void) {
                 
-        let url = URL(string: APIEndPoint.FetchUsers.path)
+        let url = URL(string: APIEndPoint.fetchUsers.path)
         
         NetworkManager.shared.getRequest(url: url, expecting: [UserInfo].self) { response in
             switch response {

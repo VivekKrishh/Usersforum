@@ -10,7 +10,7 @@ import XCTest
 final class APIEndPointTests: XCTestCase {
 
     func testApiEndPoints() {
-        XCTAssertEqual(APIEndPoint.FetchUsers.path, "https://jsonplaceholder.typicode.com/users")
+        XCTAssertEqual(APIEndPoint.fetchUsers.path, "https://jsonplaceholder.typicode.com/users")
     }
     
 }
