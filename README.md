@@ -7,7 +7,7 @@ The datas are fetched from https://jsonplaceholder.typicode.com
 * API Integration
 * API Mock - Test app flow with mock json response
 * Unit test - code coverage
-* SwiftLint - Maintaining coading standards
+* SwiftLint - Maintaining coding standards
 * Localization
 
 ## Architecture 
@@ -18,5 +18,5 @@ Host: https://jsonplaceholder.typicode.com<br>
 searvices:<br>
 1: /users<br>
 
-## Unit testing and code coverage 
-'USERSFORUMTests' has 72.5% of code coverage report
+## Unit testing
+
