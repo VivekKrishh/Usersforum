@@ -8,7 +8,6 @@ target 'USERSFORUM' do
   # Pods for USERSFORUM
   pod 'SwiftLint'
   pod 'Alamofire'
-  pod 'MBProgressHUD', '~> 1.2.0'
 
   target 'USERSFORUMTests' do
     inherit! :search_paths
