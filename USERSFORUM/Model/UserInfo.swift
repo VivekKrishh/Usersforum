@@ -1,20 +1,13 @@
 //
-//  Entity.swift
+//  UserInfo.swift
 //  USERSFORUM
 //
-//  Created by Vivek on 12/10/23.
+//  Created by Pearlarc on 17/10/23.
 //
 
 import Foundation
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let welcome = try? JSONDecoder().decode([UserInfo].self, from: jsonData)
-
-import Foundation
-
-// MARK: - UserData
+// MARK: - UserInfo
 struct UserInfo: Codable, CustomStringConvertible {
     let id: Int
     let name, username, email: String
@@ -43,5 +36,3 @@ struct Geo: Codable {
 struct Company: Codable {
     let name, catchPhrase, bs: String
 }
-
-
