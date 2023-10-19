@@ -45,13 +45,38 @@
                     <view key="view" contentMode="scaleToFill" id="0u9-cr-qgG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JOx-SD-TXF">
+                                <rect key="frame" x="0.0" y="234" width="393" height="618"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="C4e-ef-NGo">
+                                <rect key="frame" x="121.66666666666669" y="64" width="150" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Epa-kb-ypT"/>
+                                    <constraint firstAttribute="width" constant="150" id="Wox-Wy-w2T"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="JQk-xb-ovM"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JOx-SD-TXF" firstAttribute="leading" secondItem="JQk-xb-ovM" secondAttribute="leading" id="0ba-Yr-v7R"/>
+                            <constraint firstItem="JOx-SD-TXF" firstAttribute="top" secondItem="C4e-ef-NGo" secondAttribute="bottom" constant="20" id="665-Th-6mD"/>
+                            <constraint firstItem="C4e-ef-NGo" firstAttribute="top" secondItem="JQk-xb-ovM" secondAttribute="top" constant="5" id="BZF-br-7ru"/>
+                            <constraint firstItem="C4e-ef-NGo" firstAttribute="centerX" secondItem="0u9-cr-qgG" secondAttribute="centerX" id="H6X-h6-hrN"/>
+                            <constraint firstAttribute="bottom" secondItem="JOx-SD-TXF" secondAttribute="bottom" id="ZKh-yZ-I45"/>
+                            <constraint firstItem="JOx-SD-TXF" firstAttribute="trailing" secondItem="JQk-xb-ovM" secondAttribute="trailing" id="mIS-xV-Non"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userDetailTable" destination="JOx-SD-TXF" id="sUu-aL-akp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dnr-xo-SCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946" y="4"/>
+            <point key="canvasLocation" x="1948.854961832061" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u9X-Td-haK">
@@ -73,6 +98,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="noimage" width="300" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

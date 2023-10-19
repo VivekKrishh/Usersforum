@@ -8,14 +8,17 @@
 import UIKit
 
 class UserListTableCell: UITableViewCell {
-
-    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet private weak var labelName: UILabel!
+    @IBOutlet private weak var labelCity: UILabel!
+    @IBOutlet private weak var labelPhoneNumber: UILabel!
     
-    @IBOutlet weak var labelCity: UILabel!
-    
-    @IBOutlet weak var labelPhoneNumber: UILabel!
-    
-    static var name: String {
+    private static var name: String {
         return String(describing: self)
+    }
+    
+    func configureCell(with model: UserInfo) {
+        labelName.text = model.name
+        labelCity.text = model.address.city
+        labelPhoneNumber.text = model.phone
     }
 }

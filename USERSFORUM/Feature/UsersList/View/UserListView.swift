@@ -7,27 +7,19 @@
 
 import UIKit
 
-protocol UsersViewProtocol {
-    
-    var presenter: UserListPresenter? { get set }
-    
-    var router: UserListRouter? { get set }
-    
+protocol UserListViewProtocol: BaseProtocol {
+    var presenter: UserListPresenterProtocol? { get set }
+    var router: UserListRouterProtocol? { get set }
     func updateUI(with usersData: [UserInfo]?, error: ResponseError?)
-    
 }
 
-class UserListView: UIViewController, UsersViewProtocol {
-    
+class UserListView: UIViewController, UserListViewProtocol {
     // Outlets
-    @IBOutlet weak var usersTable: UITableView!
-    
-    var presenter: UserListPresenter?
-    
-    var router: UserListRouter?
-    
+    @IBOutlet private weak var usersTable: UITableView!
+    var presenter: UserListPresenterProtocol?
+    var router: UserListRouterProtocol?
     private var users: [UserInfo] = []
-
+    
     private let placeholderLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
@@ -36,13 +28,13 @@ class UserListView: UIViewController, UsersViewProtocol {
         return label
     }()
     
-    func setDataSourcesAndDelegates() {
-        self.usersTable.dataSource = self
-        self.usersTable.delegate = self
+    private func registerNibs() {
+        usersTable.register(cell: UserListTableCell.self)
     }
     
-    func registerNibs() {
-        usersTable.register(cell: UserListTableCell.self)
+    private func setDataSourcesAndDelegates() {
+        self.usersTable.dataSource = self
+        self.usersTable.delegate = self
     }
     
     override func viewDidLoad() {
@@ -68,7 +60,6 @@ class UserListView: UIViewController, UsersViewProtocol {
         placeholderLabel.center = self.view.center
     }
     
-
     func updateUI(with usersData: [UserInfo]?, error: ResponseError?) {
         DispatchQueue.main.async { [weak self] in
             if let usersData = usersData {
@@ -78,13 +69,6 @@ class UserListView: UIViewController, UsersViewProtocol {
                 self?.placeholderLabel.text = UsersForumApp.errorUnknown.localized
             }
         }
-    }
-
-}
-
-extension UserListView {
-    static var name: String {
-       return String(describing: self)
     }
 }
 
@@ -96,11 +80,10 @@ extension UserListView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: UserListTableCell.self, for: indexPath)
         
-        let user = users.item(at: indexPath.row)
-        cell.labelName.text = user?.name ?? ""
-        cell.labelCity.text = user?.address.city ?? ""
-        cell.labelPhoneNumber.text = user?.phone ?? ""
-            
+        guard let userModel = users.item(at: indexPath.row) else  { return cell }
+        
+        cell.configureCell(with: userModel)
+        
         return cell
     }
     

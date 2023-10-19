@@ -8,18 +8,13 @@
 import Foundation
 
 protocol UserListInteractorProtocol {
-    
-    var presenter: UserListPresenter? { get set }
-    
+    var presenter: UserListPresenterProtocol? { get set }
     var usersListDataService: UsersListServiceProtocol? { get set }
-    
     func getUsersInfoFromService(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void)
 }
 
 class UserListInteractor: UserListInteractorProtocol {
-    
-    var presenter: UserListPresenter?
-    
+    var presenter: UserListPresenterProtocol?
     var usersListDataService: UsersListServiceProtocol?
     
     init(presenter: UserListPresenter? = nil, usersListDataService: UsersListServiceProtocol? = UsersListService()) {
@@ -28,7 +23,6 @@ class UserListInteractor: UserListInteractorProtocol {
     }
     
     func getUsersInfoFromService(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void)  {
-        
         self.usersListDataService?.getUsersInfoFromAPI { data, error in
             if let data = data {
                 onCompletion(data, nil)

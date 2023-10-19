@@ -6,7 +6,7 @@ The datas are fetched from https://jsonplaceholder.typicode.com
 * Clean Architecture
 * API Integration
 * API Mock - Test app flow with mock json response
-* Unit test - code coverage
+* Unit test - Code coverage
 * SwiftLint - Maintaining coding standards
 * Localization
 
@@ -20,4 +20,8 @@ searvices:<br>
 
 ## Unit testing
 Added testcases
+
+## Dropbox link for demo video and code coverage report
+https://www.dropbox.com/scl/fo/3eibglvwcr01bgqyqevz8/h?rlkey=kjj9q7rclazjdza1vlyjemegw&dl=0
+
 

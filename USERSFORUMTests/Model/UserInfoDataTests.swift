@@ -12,7 +12,6 @@ final class UserInfoDataTests: XCTestCase {
     
     func testUserInfoParsing() throws {
         if let userListData = try getUserListDataObject(), let userInfo = userListData.first {
-            
             // then
             XCTAssertEqual(userInfo.name, "Leanne Graham")
             XCTAssertEqual(userInfo.id, 1)

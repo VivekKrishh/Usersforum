@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+protocol UserDetailInteractorProtocol {
+    var presenter: UserDetailPresenter? { get set }
+}
+
+class UserDetailInteractor: UserDetailInteractorProtocol {
+    var presenter: UserDetailPresenter?
+        
+    init(presenter: UserDetailPresenter? = nil) {
+        self.presenter = presenter
+    }
+}

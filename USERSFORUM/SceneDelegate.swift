@@ -20,6 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let rootNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         
+        UINavigationBar.appearance().tintColor = .black
+        
         window.rootViewController = rootNavigationController
         
         self.window = window

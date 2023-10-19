@@ -18,7 +18,6 @@ struct UserInfo: Codable, CustomStringConvertible {
     var description: String {
         return "id:\(id) - name:\(name) - username:\(username) - email:\(email) - address:\(address) - phone:\(phone)"
     }
-    
 }
 
 // MARK: - Address

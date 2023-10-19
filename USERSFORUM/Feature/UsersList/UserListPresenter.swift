@@ -4,38 +4,25 @@
 //
 //  Created by Vivek on 12/10/23.
 //
-
 import Foundation
 
 protocol UserListPresenterProtocol {
-    
-    var view: UserListView? { get set }
-    
-    var router: UserListRouter? { get set }
-    
-    var interactor: UserListInteractor? { get set }
+    var view: UserListViewProtocol? { get set }
+    var router: UserListRouterProtocol? { get set }
+    var interactor: UserListInteractorProtocol? { get set }
     
     // Tell interactor to call the API to update the View
     func updateView()
-    
-}
-
-protocol ViewUserInteractionProtocol {
-    
+    // View User Interaction Methods
     func navigateToDetail(with userData: UserInfo)
 }
 
-
-class UserListPresenter: UserListPresenterProtocol, ViewUserInteractionProtocol {
-
-    var view: UserListView?
-    
-    var router: UserListRouter?
-    
-    var interactor: UserListInteractor?
+class UserListPresenter: UserListPresenterProtocol {
+    var view: UserListViewProtocol?
+    var router: UserListRouterProtocol?
+    var interactor: UserListInteractorProtocol?
     
     func updateView() {
-        
         self.interactor?.getUsersInfoFromService(onCompletion: { data, error in
             if data != nil {
                 self.view?.updateUI(with: data, error: nil)
