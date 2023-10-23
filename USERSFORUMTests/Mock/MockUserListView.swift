@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MockUserListView: UserListViewProtocol {
+final class MockUserListView: UserListViewProtocol {
     var showUIUpdated: Bool = false
     var presenter: UserListPresenterProtocol?
     var router: UserListRouterProtocol?

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserListTableCell: UITableViewCell {
+final class UserListTableCell: UITableViewCell {
     @IBOutlet private weak var labelName: UILabel!
     @IBOutlet private weak var labelCity: UILabel!
     @IBOutlet private weak var labelPhoneNumber: UILabel!

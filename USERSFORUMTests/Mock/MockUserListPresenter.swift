@@ -12,7 +12,7 @@ enum ToCheck {
     case failure
 }
 
-class MockUserListPresenter: UserListPresenterProtocol {
+final class MockUserListPresenter: UserListPresenterProtocol {
     var view: USERSFORUM.UserListViewProtocol?
     var router: USERSFORUM.UserListRouterProtocol?
     var interactor: USERSFORUM.UserListInteractorProtocol?

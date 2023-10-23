@@ -17,13 +17,19 @@ protocol UserListPresenterProtocol {
     func navigateToDetail(with userData: UserInfo)
 }
 
-class UserListPresenter: UserListPresenterProtocol {
+final class UserListPresenter: UserListPresenterProtocol {
     var view: UserListViewProtocol?
     var router: UserListRouterProtocol?
     var interactor: UserListInteractorProtocol?
     
+    init(view: UserListViewProtocol? = nil, router: UserListRouterProtocol? = nil, interactor: UserListInteractorProtocol? = nil) {
+        self.view = view
+        self.router = router
+        self.interactor = interactor
+    }
+    
     func updateView() {
-        self.interactor?.getUsersInfoFromService(onCompletion: { data, error in
+        self.interactor?.getUserList(onCompletion: { data, error in
             if data != nil {
                 self.view?.updateUI(with: data, error: nil)
             } else {

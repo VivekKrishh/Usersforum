@@ -12,7 +12,6 @@ enum Storyboard: String {
 }
 
 enum StoryboardIdentifier: String {
-    
     case usersList
     
     case userDetail

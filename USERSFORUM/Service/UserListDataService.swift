@@ -7,15 +7,12 @@
 
 import Foundation
 
-protocol UsersListServiceProtocol {
-   
-    func getUsersInfoFromAPI(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void)
-    
+protocol UserListDataServiceProtocol {
+    func getUserList(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void)
 }
 
-final class UsersListService: UsersListServiceProtocol {
-    
-    func getUsersInfoFromAPI(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void) {
+final class UserListDataService: UserListDataServiceProtocol {
+    func getUserList(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void) {
                 
         let url = URL(string: APIEndPoint.fetchUsers.path)
         
@@ -28,5 +25,4 @@ final class UsersListService: UsersListServiceProtocol {
             }
         }
     }
-  
 }

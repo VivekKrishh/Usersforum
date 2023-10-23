@@ -12,15 +12,11 @@ protocol Localized {
 }
 
 enum UsersForumApp: String , Localized {
-        
     case errorRemoteDataParsingFailed
-    
     case errorInvalidEndPoint
-    
     case errorUnknown
     
     var localized: String {
         self.rawValue.localized
     }
-    
 }

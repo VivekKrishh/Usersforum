@@ -13,12 +13,22 @@ protocol UserListViewProtocol: BaseProtocol {
     func updateUI(with usersData: [UserInfo]?, error: ResponseError?)
 }
 
-class UserListView: UIViewController, UserListViewProtocol {
+final class UserListView: UIViewController, UserListViewProtocol {
     // Outlets
     @IBOutlet private weak var usersTable: UITableView!
     var presenter: UserListPresenterProtocol?
     var router: UserListRouterProtocol?
     private var users: [UserInfo] = []
+    
+    init(presenter: UserListPresenterProtocol? = nil, router: UserListRouterProtocol? = nil) {
+        self.presenter = presenter
+        self.router = router
+        super.init(nibName: String(describing: Self.self), bundle: Bundle.main)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     private let placeholderLabel: UILabel = {
         let label = UILabel()
@@ -42,10 +52,8 @@ class UserListView: UIViewController, UserListViewProtocol {
         // Do any additional setup after loading the view.
         // Initialize Router setup which will intialize all the objects of VIPER
         UserListRouter.initialSetup(with: self)
-        
         self.view.addSubview(placeholderLabel)
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
         registerNibs()
         setDataSourcesAndDelegates()
     }

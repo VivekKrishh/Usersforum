@@ -23,7 +23,7 @@ enum DataForDisplay: String, CaseIterable {
     case website
 }
 
-class  UserDetailView: UIViewController, UserDetailViewProtocol {
+final class  UserDetailView: UIViewController, UserDetailViewProtocol {
     var presenter: UserDetailPresenterProtocol?
     private var dataForUI: DataForDisplay?
     private var userInfoModel: UserInfo?

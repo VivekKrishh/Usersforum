@@ -12,11 +12,10 @@ enum ResponseState {
     case failure
 }
 
-final class MockUsersListService: UsersListServiceProtocol {
-
+final class MockUsersListService: UserListDataServiceProtocol {
     var responseState: ResponseState = .success
     
-    func getUsersInfoFromAPI(onCompletion: @escaping ([UserInfo]?, ResponseError?) -> Void) {
+    func getUserList(onCompletion: @escaping ([UserInfo]?, ResponseError?) -> Void) {
         guard let mockFileURL = Bundle.main.url(forResource: "UsersListResponse", withExtension: ".json") else {
             return
         }
@@ -34,7 +33,5 @@ final class MockUsersListService: UsersListServiceProtocol {
             onCompletion(nil, ResponseError.unexpectedStatusCode)
             
         }
-        
     }
-    
 }

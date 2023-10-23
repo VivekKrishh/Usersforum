@@ -8,7 +8,6 @@
 import Foundation
 
 enum APIEndPoint {
-    
     case fetchUsers
     
     var path: String {
@@ -17,5 +16,4 @@ enum APIEndPoint {
             return APIConstants.users
         }
     }
-    
 }

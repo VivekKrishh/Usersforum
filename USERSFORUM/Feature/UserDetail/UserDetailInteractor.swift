@@ -11,7 +11,7 @@ protocol UserDetailInteractorProtocol {
     var presenter: UserDetailPresenter? { get set }
 }
 
-class UserDetailInteractor: UserDetailInteractorProtocol {
+final class UserDetailInteractor: UserDetailInteractorProtocol {
     var presenter: UserDetailPresenter?
         
     init(presenter: UserDetailPresenter? = nil) {

@@ -9,13 +9,10 @@ import Foundation
 import Alamofire
 
 protocol NetworkProtocol {
-    
     func getRequest<T:Codable>(url: URL?, expecting: T.Type, onCompletion: @escaping (Result<T,Error>) -> Void )
-    
 }
 
-class NetworkManager: NetworkProtocol {
-    
+final class NetworkManager: NetworkProtocol {
     static let shared = NetworkManager()
     
     private init() {
@@ -43,8 +40,6 @@ class NetworkManager: NetworkProtocol {
                 case .failure:
                     onCompletion(.failure(ResponseError.unexpectedStatusCode))
                 }
-            }
-        
+         }
     }
-    
 }

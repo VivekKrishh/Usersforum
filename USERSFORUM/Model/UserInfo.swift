@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 // MARK: - UserInfo
 struct UserInfo: Codable, CustomStringConvertible {
     let id: Int

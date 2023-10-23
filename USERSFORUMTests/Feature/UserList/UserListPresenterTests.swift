@@ -21,7 +21,6 @@ final class UserListPresenterTests: XCTestCase {
         
         presenter.view = view
         presenter.router = router
-        
         // when
         presenter.updateView()
         

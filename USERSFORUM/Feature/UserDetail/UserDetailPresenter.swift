@@ -13,7 +13,7 @@ protocol UserDetailPresenterProtocol {
     var interactor: UserDetailInteractorProtocol? { get set }
 }
 
-class UserDetailPresenter: UserDetailPresenterProtocol {
+final class UserDetailPresenter: UserDetailPresenterProtocol {
     var view: UserDetailViewProtocol?
     var router: UserDetailRouterProtocol?
     var interactor: UserDetailInteractorProtocol?

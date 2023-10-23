@@ -34,6 +34,7 @@ class UserListRouter: UserListRouterProtocol {
         var view: UserListViewProtocol = rootController
         var presenter: UserListPresenterProtocol = UserListPresenter()
         let interactor: UserListInteractorProtocol = UserListInteractor(presenter: presenter as? UserListPresenter)
+        
         view.router = router
         view.presenter = presenter as? UserListPresenter
         router.view = view as? UserListView

@@ -16,7 +16,7 @@ protocol UserDetailRouterProtocol {
     func navigateBack()
 }
 
-class UserDetailRouter: UserDetailRouterProtocol {
+final class UserDetailRouter: UserDetailRouterProtocol {
     var entry: EntryPoint?
     var view: UserDetailViewProtocol?
     var presenter: UserDetailPresenterProtocol?

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserDetailTableCell: UITableViewCell {
+final class UserDetailTableCell: UITableViewCell {
     @IBOutlet private weak var labelPlaceholder: UILabel!
     @IBOutlet private weak var labelValue: UILabel!
     
