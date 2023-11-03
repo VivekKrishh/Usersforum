@@ -13,7 +13,7 @@ protocol UserDetailInteractorProtocol {
 
 final class UserDetailInteractor: UserDetailInteractorProtocol {
     var presenter: UserDetailPresenter?
-        
+    
     init(presenter: UserDetailPresenter? = nil) {
         self.presenter = presenter
     }

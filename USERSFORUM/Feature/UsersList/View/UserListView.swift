@@ -8,22 +8,21 @@
 import UIKit
 
 protocol UserListViewProtocol: BaseProtocol {
-    var presenter: UserListPresenterProtocol? { get set }
-    var router: UserListRouterProtocol? { get set }
-    func updateUI(with usersData: [UserInfo]?, error: ResponseError?)
+    func showUsersList(with usersData: [UserInfo]?, error: ResponseError?)
 }
 
-final class UserListView: UIViewController, UserListViewProtocol {
-    // Outlets
-    @IBOutlet private weak var usersTable: UITableView!
-    var presenter: UserListPresenterProtocol?
-    var router: UserListRouterProtocol?
-    private var users: [UserInfo] = []
+final class UserListView: BaseView, UserListViewProtocol {
+    enum UserListConstants {
+        static let cellHeight = 120.0
+    }
     
-    init(presenter: UserListPresenterProtocol? = nil, router: UserListRouterProtocol? = nil) {
+    // Outlets
+    @IBOutlet weak var usersTable: UITableView!
+    private var presenter: UserListPresenter?
+    
+    init?(coder: NSCoder, presenter: UserListPresenter) {
         self.presenter = presenter
-        self.router = router
-        super.init(nibName: String(describing: Self.self), bundle: Bundle.main)
+        super.init(coder: coder)
     }
     
     required init?(coder: NSCoder) {
@@ -38,11 +37,8 @@ final class UserListView: UIViewController, UserListViewProtocol {
         return label
     }()
     
-    private func registerNibs() {
+    private func setupTableView() {
         usersTable.register(cell: UserListTableCell.self)
-    }
-    
-    private func setDataSourcesAndDelegates() {
         self.usersTable.dataSource = self
         self.usersTable.delegate = self
     }
@@ -51,16 +47,14 @@ final class UserListView: UIViewController, UserListViewProtocol {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // Initialize Router setup which will intialize all the objects of VIPER
-        UserListRouter.initialSetup(with: self)
         self.view.addSubview(placeholderLabel)
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        registerNibs()
-        setDataSourcesAndDelegates()
+        setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.presenter?.updateView()
+        self.presenter?.fetchUserListDataForView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,10 +62,9 @@ final class UserListView: UIViewController, UserListViewProtocol {
         placeholderLabel.center = self.view.center
     }
     
-    func updateUI(with usersData: [UserInfo]?, error: ResponseError?) {
+    func showUsersList(with usersData: [UserInfo]?, error: ResponseError?) {
         DispatchQueue.main.async { [weak self] in
-            if let usersData = usersData {
-                self?.users = usersData
+            if usersData != nil {
                 self?.usersTable.reloadData()
             } else {
                 self?.placeholderLabel.text = UsersForumApp.errorUnknown.localized
@@ -82,25 +75,22 @@ final class UserListView: UIViewController, UserListViewProtocol {
 
 extension UserListView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return self.presenter?.getUsersCount() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: UserListTableCell.self, for: indexPath)
-        
-        guard let userModel = users.item(at: indexPath.row) else  { return cell }
-        
+        guard let userModel = presenter?.getDatasByIndex(index: indexPath.row) else  { return cell }
         cell.configureCell(with: userModel)
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return UserListConstants.cellHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = users.item(at: indexPath.row) else { return }
+        guard let item = presenter?.getDatasByIndex(index: indexPath.row) else { return }
         self.presenter?.navigateToDetail(with: item)
     }
 }

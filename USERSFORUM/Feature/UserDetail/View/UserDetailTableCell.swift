@@ -13,7 +13,6 @@ final class UserDetailTableCell: UITableViewCell {
     
     func configureCell(with placeholderData: DataForDisplay, model: UserInfo) {
         labelPlaceholder.text = placeholderData.rawValue.capitalized
-        
         switch placeholderData {
         case .name:
             labelValue.text = model.name

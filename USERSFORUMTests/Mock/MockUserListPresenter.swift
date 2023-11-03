@@ -13,18 +13,34 @@ enum ToCheck {
 }
 
 final class MockUserListPresenter: UserListPresenterProtocol {
+    var shouldNavigateToDetail: Bool = false
+    
+    func getDatasByIndex(index: Int) -> UserInfo? {
+      return nil
+    }
+    
+    func getUsersData() -> [UserInfo] {
+      return []
+    }
+    
+    func getUsersCount() -> Int {
+      return 10
+    }
+    
     var view: USERSFORUM.UserListViewProtocol?
     var router: USERSFORUM.UserListRouterProtocol?
     var interactor: USERSFORUM.UserListInteractorProtocol?
     var toTest: ToCheck? = .success
     
-    func updateView() {
+    func fetchUserListDataForView() {
         if toTest == .success {
-            view?.updateUI(with: [], error: nil)
+            view?.showUsersList(with: [], error: nil)
         } else {
-            view?.updateUI(with: nil, error: .unexpectedStatusCode)
+            view?.showUsersList(with: nil, error: .unexpectedStatusCode)
         }
     }
     
-    func navigateToDetail(with userData: USERSFORUM.UserInfo) { }
+    func navigateToDetail(with userData: USERSFORUM.UserInfo) {
+        shouldNavigateToDetail = true
+    }
 }

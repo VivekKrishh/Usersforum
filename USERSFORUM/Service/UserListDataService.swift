@@ -8,14 +8,12 @@
 import Foundation
 
 protocol UserListDataServiceProtocol {
-    func getUserList(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void)
+    func fetchUserList(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void)
 }
 
 final class UserListDataService: UserListDataServiceProtocol {
-    func getUserList(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void) {
-                
+    func fetchUserList(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void) {
         let url = URL(string: APIEndPoint.fetchUsers.path)
-        
         NetworkManager.shared.getRequest(url: url, expecting: [UserInfo].self) { response in
             switch response {
             case .success(let data):

@@ -8,15 +8,15 @@
 import Foundation
 
 final class MockUserListView: UserListViewProtocol {
-    var showUIUpdated: Bool = false
+    var shouldShowResult: Bool = false
     var presenter: UserListPresenterProtocol?
     var router: UserListRouterProtocol?
     
-    func updateUI(with usersData: [USERSFORUM.UserInfo]?, error: USERSFORUM.ResponseError?) {
+    func showUsersList(with usersData: [USERSFORUM.UserInfo]?, error: USERSFORUM.ResponseError?) {
         if error == nil {
-            showUIUpdated = true
+            shouldShowResult = true
         } else {
-            showUIUpdated = false
+            shouldShowResult = false
         }
     }
 }

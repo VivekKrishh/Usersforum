@@ -9,22 +9,20 @@ import Foundation
 
 protocol UserListInteractorProtocol {
     var presenter: UserListPresenterProtocol? { get set }
-    var userListDataService: UserListDataServiceProtocol? { get set }
-    
-    func getUserList(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void)
+    var userListDataService: UserListDataServiceProtocol { get set }
+    func fetchUserList(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void)
 }
 
 final class UserListInteractor: UserListInteractorProtocol {
     var presenter: UserListPresenterProtocol?
-    var userListDataService: UserListDataServiceProtocol?
+    var userListDataService: UserListDataServiceProtocol
     
-    init(presenter: UserListPresenter? = nil, usersListDataService: UserListDataServiceProtocol? = UserListDataService()) {
-        self.presenter = presenter
+    init(usersListDataService: UserListDataServiceProtocol = UserListDataService()) {
         self.userListDataService = usersListDataService
     }
     
-    func getUserList(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void)  {
-        self.userListDataService?.getUserList { data, error in
+    func fetchUserList(onCompletion:@escaping (_ data: [UserInfo]?, _ error: ResponseError?) -> Void)  {
+        self.userListDataService.fetchUserList { data, error in
             if let data = data {
                 onCompletion(data, nil)
             } else {

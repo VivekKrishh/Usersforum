@@ -6,21 +6,12 @@
 //
 
 import Foundation
-
 protocol UserDetailRouterProtocol {
-    var entry: EntryPoint? { get }
-    var view: UserDetailViewProtocol? { get set }
-    var presenter: UserDetailPresenterProtocol? { get set }
-    var interactor: UserDetailInteractorProtocol? { get set }
-    
     func navigateBack()
 }
 
 final class UserDetailRouter: UserDetailRouterProtocol {
-    var entry: EntryPoint?
-    var view: UserDetailViewProtocol?
-    var presenter: UserDetailPresenterProtocol?
-    var interactor: UserDetailInteractorProtocol?
+    private var view: UserDetailViewProtocol?
     
     func navigateBack() {
         guard let view = self.view as? UserDetailView else { return }

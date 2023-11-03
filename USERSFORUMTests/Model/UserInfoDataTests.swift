@@ -9,7 +9,6 @@ import XCTest
 @testable import USERSFORUM
 
 final class UserInfoDataTests: XCTestCase {
-    
     func testUserInfoParsing() throws {
         if let userListData = try getUserListDataObject(), let userInfo = userListData.first {
             // then

@@ -23,29 +23,28 @@ enum DataForDisplay: String, CaseIterable {
     case website
 }
 
-final class  UserDetailView: UIViewController, UserDetailViewProtocol {
+final class UserDetailView: BaseView, UserDetailViewProtocol {
+    enum UserDetailConstants {
+        static let cellHeight = 60.0
+    }
+    
     var presenter: UserDetailPresenterProtocol?
     private var dataForUI: DataForDisplay?
     private var userInfoModel: UserInfo?
-    @IBOutlet private weak var userDetailTable: UITableView!
+    @IBOutlet weak var userDetailTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerNibs()
-        setDataSourcesAndDelegates()
+        setupTableView()
     }
     
-    private func registerNibs() {
+    private func setupTableView() {
         userDetailTable.register(cell: UserDetailTableCell.self)
-    }
-    
-    private func setDataSourcesAndDelegates() {
         self.userDetailTable.dataSource = self
         self.userDetailTable.delegate = self
     }
     
     func displayUserInfo(from model: UserInfo) {
-        print("Model : \(model.description)")
         userInfoModel = model
     }
     
@@ -62,15 +61,12 @@ extension UserDetailView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: UserDetailTableCell.self, for: indexPath)
-        
         guard let userInfoModel = userInfoModel else { return cell }
-        
         cell.configureCell(with: DataForDisplay.allCases[indexPath.row], model: userInfoModel)
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return UserDetailConstants.cellHeight
     }
 }

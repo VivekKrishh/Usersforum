@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E2E198C852172FB7E0513D7 /* Pods_USERSFORUM_USERSFORUMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAE31238B7962895B36EBE1 /* Pods_USERSFORUM_USERSFORUMUITests.framework */; };
 		98C2C2A3BF864FECF623BAF9 /* Pods_USERSFORUM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 163544ABC6D65B390BCCC84E /* Pods_USERSFORUM.framework */; };
+		E326B6E92AF42D2F009701E3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326B6E82AF42D2F009701E3 /* BaseView.swift */; };
 		E35820E52AD7F7F100496353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35820E42AD7F7F100496353 /* AppDelegate.swift */; };
 		E35820E72AD7F7F100496353 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35820E62AD7F7F100496353 /* SceneDelegate.swift */; };
 		E35820EC2AD7F7F100496353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35820EA2AD7F7F100496353 /* Main.storyboard */; };
@@ -44,7 +45,7 @@
 		E3B739302ADD86350036629B /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7392F2ADD86350036629B /* StoryboardIdentifier.swift */; };
 		E3B739322ADD88AC0036629B /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B739312ADD88AC0036629B /* UIStoryboardExtension.swift */; };
 		E3B739342ADDA3BC0036629B /* UsersListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B739332ADDA3BC0036629B /* UsersListServiceTests.swift */; };
-		E3B739362ADDBAE60036629B /* MockUsersListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B739352ADDBAE60036629B /* MockUsersListService.swift */; };
+		E3B739362ADDBAE60036629B /* MockUsersListDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B739352ADDBAE60036629B /* MockUsersListDataService.swift */; };
 		E3B739392ADE94DF0036629B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B739382ADE94DF0036629B /* UserInfo.swift */; };
 		E3B739402ADEBFBF0036629B /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7393F2ADEBFBF0036629B /* TestUtils.swift */; };
 		E3B739432ADEC1CD0036629B /* UserInfoDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B739422ADEC1CD0036629B /* UserInfoDataTests.swift */; };
@@ -55,6 +56,10 @@
 		E3BD746F2AE185140062C85A /* UserListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BD746E2AE185140062C85A /* UserListPresenterTests.swift */; };
 		E3BD74732AE19D9F0062C85A /* MockUserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BD74722AE19D9F0062C85A /* MockUserListView.swift */; };
 		E3BD74752AE19DDE0062C85A /* MockUserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BD74742AE19DDE0062C85A /* MockUserListPresenter.swift */; };
+		E3F0B1B12AF5302E0091E72A /* UserDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0B1B02AF5302E0091E72A /* UserDetailViewTests.swift */; };
+		E3F0B1B32AF53C660091E72A /* UserListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0B1B22AF53C660091E72A /* UserListViewTests.swift */; };
+		E3F0B1B52AF5443C0091E72A /* UserDetailRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0B1B42AF5443C0091E72A /* UserDetailRouterTests.swift */; };
+		E3F0B1B82AF545470091E72A /* MockUserDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0B1B62AF544A20091E72A /* MockUserDetailRouter.swift */; };
 		F13D2828879155634FA6C9E8 /* Pods_USERSFORUMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0210710933E0BAA0A1E40C4 /* Pods_USERSFORUMTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +90,7 @@
 		B987BD5588BD7D898170DA1F /* Pods-USERSFORUMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-USERSFORUMTests.release.xcconfig"; path = "Target Support Files/Pods-USERSFORUMTests/Pods-USERSFORUMTests.release.xcconfig"; sourceTree = "<group>"; };
 		D0E11D3DE56DCCE626B10DB8 /* Pods-USERSFORUM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-USERSFORUM.release.xcconfig"; path = "Target Support Files/Pods-USERSFORUM/Pods-USERSFORUM.release.xcconfig"; sourceTree = "<group>"; };
 		DCACC3173C1A82277B27A0AD /* Pods-USERSFORUM-USERSFORUMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-USERSFORUM-USERSFORUMUITests.release.xcconfig"; path = "Target Support Files/Pods-USERSFORUM-USERSFORUMUITests/Pods-USERSFORUM-USERSFORUMUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E326B6E82AF42D2F009701E3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E35820E12AD7F7F100496353 /* USERSFORUM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USERSFORUM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35820E42AD7F7F100496353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35820E62AD7F7F100496353 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,7 +130,7 @@
 		E3B7392F2ADD86350036629B /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
 		E3B739312ADD88AC0036629B /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
 		E3B739332ADDA3BC0036629B /* UsersListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListServiceTests.swift; sourceTree = "<group>"; };
-		E3B739352ADDBAE60036629B /* MockUsersListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersListService.swift; sourceTree = "<group>"; };
+		E3B739352ADDBAE60036629B /* MockUsersListDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersListDataService.swift; sourceTree = "<group>"; };
 		E3B739382ADE94DF0036629B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		E3B7393F2ADEBFBF0036629B /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		E3B739422ADEC1CD0036629B /* UserInfoDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDataTests.swift; sourceTree = "<group>"; };
@@ -135,6 +141,10 @@
 		E3BD746E2AE185140062C85A /* UserListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListPresenterTests.swift; sourceTree = "<group>"; };
 		E3BD74722AE19D9F0062C85A /* MockUserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserListView.swift; sourceTree = "<group>"; };
 		E3BD74742AE19DDE0062C85A /* MockUserListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserListPresenter.swift; sourceTree = "<group>"; };
+		E3F0B1B02AF5302E0091E72A /* UserDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewTests.swift; sourceTree = "<group>"; };
+		E3F0B1B22AF53C660091E72A /* UserListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewTests.swift; sourceTree = "<group>"; };
+		E3F0B1B42AF5443C0091E72A /* UserDetailRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRouterTests.swift; sourceTree = "<group>"; };
+		E3F0B1B62AF544A20091E72A /* MockUserDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDetailRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +198,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E326B6E72AF42D0E009701E3 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				E326B6E82AF42D2F009701E3 /* BaseView.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
 		E35820D82AD7F7F100496353 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +231,7 @@
 		E35820E32AD7F7F100496353 /* USERSFORUM */ = {
 			isa = PBXGroup;
 			children = (
+				E326B6E72AF42D0E009701E3 /* BaseView */,
 				E3BD746A2AE161510062C85A /* BaseProtocol */,
 				E3B7393A2ADE95220036629B /* Feature */,
 				E3B739372ADE94B20036629B /* Model */,
@@ -355,6 +374,7 @@
 			children = (
 				E3BD746E2AE185140062C85A /* UserListPresenterTests.swift */,
 				E38100242AE42E8F008A96B7 /* UserListInteractorTests.swift */,
+				E3F0B1B22AF53C660091E72A /* UserListViewTests.swift */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -364,6 +384,8 @@
 			children = (
 				E38100282AE42F5A008A96B7 /* UserDetailPresenterTests.swift */,
 				E381002A2AE42F75008A96B7 /* UserDetailInteractorTests.swift */,
+				E3F0B1B02AF5302E0091E72A /* UserDetailViewTests.swift */,
+				E3F0B1B42AF5443C0091E72A /* UserDetailRouterTests.swift */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -433,7 +455,8 @@
 			children = (
 				E3BD74722AE19D9F0062C85A /* MockUserListView.swift */,
 				E3BD74742AE19DDE0062C85A /* MockUserListPresenter.swift */,
-				E3B739352ADDBAE60036629B /* MockUsersListService.swift */,
+				E3B739352ADDBAE60036629B /* MockUsersListDataService.swift */,
+				E3F0B1B62AF544A20091E72A /* MockUserDetailRouter.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -728,7 +751,9 @@
 				E3B739402ADEBFBF0036629B /* TestUtils.swift in Sources */,
 				E358213E2AD92D9D00496353 /* UserDetailPresenter.swift in Sources */,
 				E35821402AD92DB400496353 /* UserDetailInteractor.swift in Sources */,
-				E3B739362ADDBAE60036629B /* MockUsersListService.swift in Sources */,
+				E326B6E92AF42D2F009701E3 /* BaseView.swift in Sources */,
+				E3B739362ADDBAE60036629B /* MockUsersListDataService.swift in Sources */,
+				E3F0B1B82AF545470091E72A /* MockUserDetailRouter.swift in Sources */,
 				E35821302AD9016200496353 /* TableViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,11 +763,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B739432ADEC1CD0036629B /* UserInfoDataTests.swift in Sources */,
+				E3F0B1B32AF53C660091E72A /* UserListViewTests.swift in Sources */,
+				E3F0B1B12AF5302E0091E72A /* UserDetailViewTests.swift in Sources */,
 				E35821572ADBF71700496353 /* ResponseErrorTests.swift in Sources */,
 				E381002B2AE42F75008A96B7 /* UserDetailInteractorTests.swift in Sources */,
 				E3B739342ADDA3BC0036629B /* UsersListServiceTests.swift in Sources */,
 				E3BD746F2AE185140062C85A /* UserListPresenterTests.swift in Sources */,
 				E358215B2ADBFC8A00496353 /* APIEndPointTests.swift in Sources */,
+				E3F0B1B52AF5443C0091E72A /* UserDetailRouterTests.swift in Sources */,
 				E38100252AE42E8F008A96B7 /* UserListInteractorTests.swift in Sources */,
 				E38100292AE42F5A008A96B7 /* UserDetailPresenterTests.swift in Sources */,
 			);

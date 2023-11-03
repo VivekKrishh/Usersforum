@@ -8,7 +8,6 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
     var window: UIWindow?
     
     
@@ -18,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let rootNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-        
+        let rootNavigationController = UINavigationController(rootViewController: UserListRouter.configureView())
+                
         UINavigationBar.appearance().tintColor = .black
         
         window.rootViewController = rootNavigationController

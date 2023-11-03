@@ -24,7 +24,6 @@ final class NetworkManager: NetworkProtocol {
             onCompletion(.failure(ResponseError.invalidURL))
             return
         }
-        
         AF.request(url , method: .get)
             .response { response in
                 switch response.result {

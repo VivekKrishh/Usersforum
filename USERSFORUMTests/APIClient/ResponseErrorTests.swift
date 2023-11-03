@@ -9,7 +9,6 @@ import XCTest
 @testable import USERSFORUM
 
 final class ResponseErrorTests: XCTestCase {
-
     func testResponseError() {
         XCTAssertEqual(ResponseError.invalidURL.description, "Endpoint is not valid.")
         XCTAssertEqual(ResponseError.decoding.description, "Users data not found.")
