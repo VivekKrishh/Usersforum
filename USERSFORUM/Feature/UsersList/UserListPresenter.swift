@@ -25,23 +25,24 @@ final class UserListPresenter: UserListPresenterProtocol {
     }
     
     func fetchUserListDataForView() {
-        self.interactor.fetchUserList(onCompletion: { [self] data, error in
+        self.interactor.fetchUserList(onCompletion: { [weak self] data, error in
             if data != nil {
-                self.view?.showUsersList(with: data, error: nil)
+                
+                self?.view?.showUsersList(with: data, error: nil)
                 if let data = data {
-                    self.users = data
+                    self?.users = data
                 }else {
-                    self.users = []
+                    self?.users = []
                 }
                 
             } else {
-                self.view?.showUsersList(with: nil, error: error)
+                self?.view?.showUsersList(with: nil, error: error)
             }
         })
     }
     
     func navigateToDetail(with userData: UserInfo) {
-        self.router.navigateToDetail(with: userData)
+        self.router.navigateToUserDetail(with: userData)
     }
     
 }

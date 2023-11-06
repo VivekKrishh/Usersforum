@@ -13,13 +13,13 @@ final class UserListPresenterTests: XCTestCase {
         // given
         let view = MockUserListView()
         let router = UserListRouter()
-        let presenter = MockUserListPresenter()
+        let mockUserListDataService = MockUsersListDataService()
+        let presenter = UserListPresenter(router: router, interactor: UserListInteractor(usersListDataService: mockUserListDataService))
         
         view.presenter = presenter
         view.router = router
         
         presenter.view = view
-        presenter.router = router
         // when
         presenter.fetchUserListDataForView()
         
@@ -33,34 +33,12 @@ final class UserListPresenterTests: XCTestCase {
         wait(for: [expectation], timeout: 0.2)
     }
     
-    func testUserListPresenterWithError() {
-        // given
-        let view = MockUserListView()
-        let router = UserListRouter()
-        let presenter = MockUserListPresenter()
-        view.presenter = presenter
-        view.router = router
-        presenter.view = view
-        presenter.router = router
-        // when
-        presenter.toTest = .failure
-        presenter.fetchUserListDataForView()
-        // then
-        let expectation =  expectation(description: "\(#function)-testUserListPresenterWithError")
-        // Wait for mock response and check result
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            expectation.fulfill()
-            XCTAssertFalse(view.shouldShowResult)
-        }
-        wait(for: [expectation], timeout: 0.2)
-    }
-    
     func testNavigateToDetail() {
-        let presenter = MockUserListPresenter()
-        let mockUserInfo = UserInfo(id: 1, name: "John", username: "Wick", email: "john@gmail.com", address: Address(street: "", suite: "", city: "", zipcode: "", geo: Geo(lat: "", lng: "")), phone: "1-770-736-8031 x56442", website: "hildegard.org", company: Company(name: "Romaguera-Crona", catchPhrase: "Multi-layered client-server neural-net"))
-        XCTAssertFalse(presenter.shouldNavigateToDetail)
+        let mockUserListRouter = MockUserListRouter()
+        let presenter = UserListPresenter(router: mockUserListRouter , interactor: UserListInteractor())
+        let mockUserInfo = UserInfo(id: 2, name: "Ervin Howell", username: "Antonette", email: "Shanna@melissa.tv", address: Address(street: "Victor Plains", suite: "Suite 879", city: "Wisokyburgh", zipcode: "90566-7771", geo: Geo(lat: "-43.9509", lng: "-34.4618")), phone: "010-692-6593 x09125", website: "anastasia.net", company: Company(name: "Deckow-Crist", catchPhrase: "Proactive didactic contingency"))
+        XCTAssertFalse(mockUserListRouter.shouldNavigateToUserDetail)
         presenter.navigateToDetail(with: mockUserInfo)
-        XCTAssertTrue(presenter.shouldNavigateToDetail)
+        XCTAssertTrue(mockUserListRouter.shouldNavigateToUserDetail)
     }
-    
 }

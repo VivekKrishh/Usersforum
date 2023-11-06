@@ -9,12 +9,24 @@ import Foundation
 
 protocol UserDetailInteractorProtocol {
     var presenter: UserDetailPresenter? { get set }
+    func fetchUserDetail(onCompletion: @escaping (_ data: UserInfo?, _ error: ResponseError?) -> Void)
 }
 
 final class UserDetailInteractor: UserDetailInteractorProtocol {
     var presenter: UserDetailPresenter?
+    private var userDetailDataService: UserDetailDataServiceProtocol
     
-    init(presenter: UserDetailPresenter? = nil) {
-        self.presenter = presenter
+    init(userDetailDataService: UserDetailDataServiceProtocol = UserDetailDataService()) {
+        self.userDetailDataService = userDetailDataService
     }
+    // Don't have api for "user details" so created this method for demonstration purposes
+    func fetchUserDetail(onCompletion: @escaping (_ data: UserInfo?, _ error: ResponseError?) -> Void)  {
+        self.userDetailDataService.fetchUserDetails { data, error in
+            if let data = data {
+                onCompletion(data, nil)
+            } else {
+                onCompletion(nil, error)
+            }
+        }
+    }    
 }

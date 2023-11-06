@@ -15,9 +15,7 @@ protocol NetworkProtocol {
 final class NetworkManager: NetworkProtocol {
     static let shared = NetworkManager()
     
-    private init() {
-        print("Network Manager Initialized")
-    }
+    private init() {}
     
     func getRequest<T:Codable>(url: URL?, expecting: T.Type, onCompletion: @escaping (Result<T,Error>) -> Void ) {
         guard let url = url else {
@@ -33,12 +31,11 @@ final class NetworkManager: NetworkProtocol {
                         let result = try JSONDecoder().decode(expecting, from: data)
                         onCompletion(.success(result))
                     } catch {
-                        print("Failed to parse Json")
                         onCompletion(.failure(ResponseError.decoding))
                     }
                 case .failure:
                     onCompletion(.failure(ResponseError.unexpectedStatusCode))
                 }
-         }
+            }
     }
 }

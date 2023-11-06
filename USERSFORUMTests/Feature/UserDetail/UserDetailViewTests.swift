@@ -15,7 +15,6 @@ class UserDetailViewTests: XCTestCase {
         super.setUp()
         
         self.viewControllerUnderTest = UIStoryboard.instantiate(identifier: StoryboardIdentifier.userDetail)
-        
         self.viewControllerUnderTest.loadView()
         self.viewControllerUnderTest.viewDidLoad()
     }
@@ -43,7 +42,7 @@ class UserDetailViewTests: XCTestCase {
         XCTAssertTrue(viewControllerUnderTest.responds(to: #selector(viewControllerUnderTest.tableView(_:numberOfRowsInSection:))))
         XCTAssertTrue(viewControllerUnderTest.responds(to: #selector(viewControllerUnderTest.tableView(_:cellForRowAt:))))
     }
-
+    
     func testTableViewCellHasReuseIdentifier() {
         let cell = viewControllerUnderTest.tableView(viewControllerUnderTest.userDetailTable, cellForRowAt: IndexPath(row: 0, section: 0)) as? UserDetailTableCell
         let actualReuseIdentifer = cell?.reuseIdentifier

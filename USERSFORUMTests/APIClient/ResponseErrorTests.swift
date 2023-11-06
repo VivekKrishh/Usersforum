@@ -14,5 +14,4 @@ final class ResponseErrorTests: XCTestCase {
         XCTAssertEqual(ResponseError.decoding.description, "Users data not found.")
         XCTAssertEqual(ResponseError.unexpectedStatusCode.description, "Unknown error occured.\nPlease try again.")
     }
-
 }

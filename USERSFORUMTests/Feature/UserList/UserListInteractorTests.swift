@@ -10,16 +10,16 @@ import XCTest
 
 final class UserListInteractorTest: XCTestCase {
     func testUserListInteractor() {
-        // given
+        // Given
         let mockUserListDataService: MockUsersListDataService = MockUsersListDataService()
+        // System under test
+        let interactor = UserListInteractor(usersListDataService: mockUserListDataService)
         
-        mockUserListDataService.fetchUserList { usersData, error in
+        interactor.fetchUserList { usersData, error in
             if usersData != nil {
                 XCTAssertNotNil(usersData)
                 XCTAssertNil(error)
             }
         }
-        
     }
-
 }

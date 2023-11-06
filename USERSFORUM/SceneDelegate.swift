@@ -17,16 +17,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let rootNavigationController = UINavigationController(rootViewController: UserListRouter.configureView())
-                
+        let rootNavigationController = UINavigationController(rootViewController: UserListConfigurator.configureView())
+        
         UINavigationBar.appearance().tintColor = .black
+        
+        rootNavigationController.isNavigationBarHidden = true
         
         window.rootViewController = rootNavigationController
         
         self.window = window
         
         window.makeKeyAndVisible()
-        
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

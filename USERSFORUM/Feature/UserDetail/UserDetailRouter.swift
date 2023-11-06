@@ -11,7 +11,7 @@ protocol UserDetailRouterProtocol {
 }
 
 final class UserDetailRouter: UserDetailRouterProtocol {
-    private var view: UserDetailViewProtocol?
+    var view: UserDetailViewProtocol?
     
     func navigateBack() {
         guard let view = self.view as? UserDetailView else { return }

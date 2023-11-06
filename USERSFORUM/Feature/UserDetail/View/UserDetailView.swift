@@ -32,7 +32,19 @@ final class UserDetailView: BaseView, UserDetailViewProtocol {
     private var dataForUI: DataForDisplay?
     private var userInfoModel: UserInfo?
     @IBOutlet weak var userDetailTable: UITableView!
-
+    
+    init?(coder: NSCoder, presenter: UserDetailPresenter) {
+        self.presenter = presenter
+        super.init(coder: coder)
+    }
+    
+    @IBAction func backAction() {
+        navigateBack()
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -46,6 +58,9 @@ final class UserDetailView: BaseView, UserDetailViewProtocol {
     
     func displayUserInfo(from model: UserInfo) {
         userInfoModel = model
+        DispatchQueue.main.async {[weak self] in
+            self?.userDetailTable.reloadData()
+        }
     }
     
     func navigateBack() {

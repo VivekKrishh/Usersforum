@@ -19,5 +19,4 @@ final class TestUtils {
         }
         return try Data(contentsOf: url)
     }
-    
 }

@@ -11,5 +11,4 @@ final class APIEndPointTests: XCTestCase {
     func testApiEndPoints() {
         XCTAssertEqual(APIEndPoint.fetchUsers.path, "https://jsonplaceholder.typicode.com/users")
     }
-    
 }
