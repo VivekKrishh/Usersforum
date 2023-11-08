@@ -8,12 +8,10 @@
 import Foundation
 
 protocol UserDetailInteractorProtocol {
-    var presenter: UserDetailPresenter? { get set }
     func fetchUserDetail(onCompletion: @escaping (_ data: UserInfo?, _ error: ResponseError?) -> Void)
 }
 
 final class UserDetailInteractor: UserDetailInteractorProtocol {
-    var presenter: UserDetailPresenter?
     private var userDetailDataService: UserDetailDataServiceProtocol
     
     init(userDetailDataService: UserDetailDataServiceProtocol = UserDetailDataService()) {

@@ -1,5 +1,5 @@
 # Usersforum 
-Usersforum provides list of users data the project is created in swift with VIPER architecture<br>
+Usersforum App provides list of user details. The project is created in swift with VIPER architecture<br>
 The datas are fetched from https://jsonplaceholder.typicode.com
 
 ## Features
@@ -11,7 +11,7 @@ The datas are fetched from https://jsonplaceholder.typicode.com
 * Localization
 
 ## Architecture 
-* Application uses **VIPER + Clean Architecture**
+* Application uses **VIPER Architecture**
 
 ## API Integration
 Host: https://jsonplaceholder.typicode.com<br>

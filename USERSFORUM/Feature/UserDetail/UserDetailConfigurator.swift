@@ -19,7 +19,6 @@ final class UserDetailConfigurator {
         })
         router.view = view
         presenter.view = view
-        interactor.presenter = presenter
         return view
     }
     
