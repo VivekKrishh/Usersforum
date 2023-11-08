@@ -3,7 +3,6 @@ Usersforum App provides list of user details. The project is created in swift wi
 The datas are fetched from https://jsonplaceholder.typicode.com
 
 ## Features
-* Clean Architecture
 * API Integration
 * API Mock - Test app flow with mock json response
 * Unit test - Code coverage
